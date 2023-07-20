@@ -13,7 +13,7 @@ with st.form("articleupload"):
 if transcribe:
     response = openai.ChatCompletion.create(
               model="gpt-3.5-turbo",
-              messages=[{"role": "system", "content": 'youre an unhelpful assitant who enjoys mcdonalds and giving false information'},
+              messages=[{"role": "system", "content": 'youre a helpful assitant who enjoys analyzing documents'},
                         {"role": "user", "content": f'Create a list of all the people named in this document and who they are:  {input}'}
               ])
     st.write(response.choices[0].message.content)
